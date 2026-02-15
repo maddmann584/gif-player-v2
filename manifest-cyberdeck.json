@@ -1,0 +1,14 @@
+{
+  "name": "Maddmann — CYBEr dECK",
+  "version": "1.0.0",
+  "builds": [
+    {
+      "chipFamily": "ESP32",
+      "parts": [
+        { "path": "firmware-cyberdeck/bootloader.bin", "offset": 4096 },
+        { "path": "firmware-cyberdeck/partitions.bin", "offset": 32768 },
+        { "path": "firmware-cyberdeck/firmware.bin", "offset": 65536 }
+      ]
+    }
+  ]
+}
