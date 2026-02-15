@@ -6,11 +6,12 @@
   <title>Maddmann Device Tools</title>
   <link rel="stylesheet" href="style.css"/>
 
-  <!-- ESP Web Tools (Flashing) -->
+  <!-- ESP Web Tools -->
   <script type="module" src="https://unpkg.com/esp-web-tools@10/dist/web/install-button.js?module"></script>
 </head>
 <body>
-  <!-- Gradient hero header -->
+
+  <!-- Gradient Hero Header -->
   <header class="hero">
     <div class="hero-inner">
       <div class="brand">
@@ -24,21 +25,23 @@
         </div>
 
         <div class="brand-text">
-          <div class="brand-title" id="siteTitle">Maddmann’s Web Flasher</div>
+          <div class="brand-title" id="siteTitle">Maddmann’s Tools</div>
           <div class="brand-sub" id="siteSubtitle">WEB FLASHER</div>
         </div>
       </div>
     </div>
   </header>
 
-  <!-- DEVICE PICKER (shown first) -->
+  <!-- DEVICE PICKER (WHITE UI) -->
   <main id="picker" class="panel">
     <div class="panel-head">
-      <div class="panel-title">Select Firmware</div>
-      <div class="panel-sub">Flash firmware • Connect • Upload • Click a GIF to play</div>
+      <div class="panel-title">Select Device</div>
+      <div class="panel-sub">Choose a device to flash firmware and manage GIFs</div>
     </div>
 
     <div class="choice-grid">
+
+      <!-- CYBER DECK -->
       <button id="pickCyber" class="choice-card" type="button">
         <div class="choice-icon">🖥️</div>
         <div class="choice-body">
@@ -47,6 +50,7 @@
         </div>
       </button>
 
+      <!-- CYD -->
       <button id="pickCyd" class="choice-card" type="button">
         <div class="choice-icon">📺</div>
         <div class="choice-body">
@@ -54,48 +58,57 @@
           <div class="choice-desc">Flash the CYD firmware and use the same uploader + list/play/delete tools.</div>
         </div>
       </button>
+
     </div>
 
     <div class="panel-foot">
       Tip: direct links —
-      <span class="mono">?device=cyberdeck</span> or <span class="mono">?device=cyd</span>
+      <span class="mono">?device=cyberdeck</span> or
+      <span class="mono">?device=cyd</span>
     </div>
   </main>
 
-  <!-- MAIN APP (hidden until device selected) -->
-  <main id="app" class="card hidden">
-    <div class="row space-between">
-      <h2 id="deviceHeader" style="margin:0;">Device</h2>
-      <button id="backBtn" class="small" type="button">← Change device</button>
+  <!-- MAIN APP (WHITE UI, has back button to choose device again) -->
+  <main id="app" class="panel hidden">
+    <div class="topbar">
+      <div class="topbar-left">
+        <div class="topbar-title" id="deviceHeader">Device</div>
+        <div class="topbar-sub">Flash firmware • Connect • Upload • Play GIFs</div>
+      </div>
+      <div class="topbar-right">
+        <button id="backBtn" class="btn-light" type="button">← Back</button>
+      </div>
     </div>
 
-    <h2>1) Flash firmware</h2>
-    <p class="hint">Use Chrome/Edge. Close Arduino Serial Monitor first.</p>
+    <hr class="sep-light"/>
+
+    <h2 class="h2-dark">1) Flash firmware</h2>
+    <p class="hint-dark">Use Chrome/Edge. Close Arduino Serial Monitor first.</p>
     <div class="row">
       <!-- Manifest is set dynamically in app.js -->
       <esp-web-install-button id="installBtn"></esp-web-install-button>
     </div>
 
-    <hr class="sep"/>
+    <hr class="sep-light"/>
 
-    <h2>2) Connect</h2>
+    <h2 class="h2-dark">2) Connect</h2>
     <div class="row">
-      <button id="connectBtn" type="button">Connect</button>
-      <span id="status">Not connected</span>
+      <button id="connectBtn" class="btn-dark" type="button">Connect</button>
+      <span id="status" class="status-pill">Not connected</span>
     </div>
 
     <div class="row">
       <input id="fileInput" type="file" accept=".gif,image/gif"/>
-      <button id="uploadBtn" disabled type="button">Upload to /gifs</button>
-      <button id="refreshBtn" disabled type="button">Refresh</button>
+      <button id="uploadBtn" class="btn-dark" disabled type="button">Upload to /gifs</button>
+      <button id="refreshBtn" class="btn-dark" disabled type="button">Refresh</button>
     </div>
 
-    <div id="uploadStatus" class="hint">Uploads go to /gifs</div>
+    <div id="uploadStatus" class="hint-dark">Uploads go to /gifs</div>
 
-    <h2>/gifs</h2>
-    <div id="list" class="list"></div>
+    <h2 class="h2-dark">/gifs</h2>
+    <div id="list" class="list light-list"></div>
 
-    <pre id="debug" class="debug">Debug:
+    <pre id="debug" class="debug light-debug">Debug:
 </pre>
   </main>
 
