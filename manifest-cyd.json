@@ -1,0 +1,14 @@
+{
+  "name": "Maddmann — CYD GIF PLAYER",
+  "version": "1.0.0",
+  "builds": [
+    {
+      "chipFamily": "ESP32",
+      "parts": [
+        { "path": "firmware-cyd/bootloader.bin", "offset": 4096 },
+        { "path": "firmware-cyd/partitions.bin", "offset": 32768 },
+        { "path": "firmware-cyd/firmware.bin", "offset": 65536 }
+      ]
+    }
+  ]
+}
