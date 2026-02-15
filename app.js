@@ -88,9 +88,9 @@ function setDevice(device){
     deviceHeader.textContent = "CYD GIF PLAYER";
     installBtn.setAttribute("manifest", "manifest-cyd.json");
   } else {
-    siteTitle.textContent = "Maddmann’s CYBEr dECK";
+    siteTitle.textContent = "Maddmann’s CYBER DECK";
     siteSubtitle.textContent = "Flash Cyber Deck firmware • Connect • Upload • Play GIFs";
-    deviceHeader.textContent = "CYBEr dECK";
+    deviceHeader.textContent = "CYBER DECK";
     installBtn.setAttribute("manifest", "manifest-cyberdeck.json");
   }
 
