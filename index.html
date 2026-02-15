@@ -6,42 +6,73 @@
   <title>Maddmann Device Tools</title>
   <link rel="stylesheet" href="style.css"/>
 
-  <!-- ESP Web Tools -->
+  <!-- ESP Web Tools (Flashing) -->
   <script type="module" src="https://unpkg.com/esp-web-tools@10/dist/web/install-button.js?module"></script>
 </head>
 <body>
-  <header>
-    <h1 id="siteTitle">Maddmann’s Web Flasher</h1>
-    <p id="siteSubtitle">Pick a device • Flash firmware • Connect • Upload • Play GIFs</p>
+  <!-- Gradient hero header -->
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">
+          <svg width="44" height="44" viewBox="0 0 24 24" fill="none">
+            <path d="M4.5 9.5C8.5 5.5 15.5 5.5 19.5 9.5" stroke="white" stroke-width="2" stroke-linecap="round"/>
+            <path d="M7 12c3-3 7-3 10 0" stroke="white" stroke-width="2" stroke-linecap="round"/>
+            <path d="M9.5 14.5c1.5-1.5 3.5-1.5 5 0" stroke="white" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="12" cy="17.5" r="1.4" fill="white"/>
+          </svg>
+        </div>
+
+        <div class="brand-text">
+          <div class="brand-title" id="siteTitle">Maddmann’s Web Flasher</div>
+          <div class="brand-sub" id="siteSubtitle">WEB FLASHER</div>
+        </div>
+      </div>
+    </div>
   </header>
 
-  <!-- ✅ START SCREEN -->
-  <main id="picker" class="card">
-    <h2>Select device</h2>
-    <p class="hint">Choose which firmware + uploader mode you want.</p>
-
-    <div class="row">
-      <button id="pickCyber" class="pick big">CYBER DECK</button>
-      <button id="pickCyd" class="pick big">CYD GIF PLAYER</button>
+  <!-- DEVICE PICKER (shown first) -->
+  <main id="picker" class="panel">
+    <div class="panel-head">
+      <div class="panel-title">Select Firmware</div>
+      <div class="panel-sub">Flash firmware • Connect • Upload • Click a GIF to play</div>
     </div>
 
-    <div class="hint">
-      Tip: You can bookmark the direct links:
+    <div class="choice-grid">
+      <button id="pickCyber" class="choice-card" type="button">
+        <div class="choice-icon">🖥️</div>
+        <div class="choice-body">
+          <div class="choice-title">CYBER DECK</div>
+          <div class="choice-desc">Flash the Cyber Deck firmware, then upload and play GIFs from /gifs.</div>
+        </div>
+      </button>
+
+      <button id="pickCyd" class="choice-card" type="button">
+        <div class="choice-icon">📺</div>
+        <div class="choice-body">
+          <div class="choice-title">CYD GIF PLAYER</div>
+          <div class="choice-desc">Flash the CYD firmware and use the same uploader + list/play/delete tools.</div>
+        </div>
+      </button>
+    </div>
+
+    <div class="panel-foot">
+      Tip: direct links —
       <span class="mono">?device=cyberdeck</span> or <span class="mono">?device=cyd</span>
     </div>
   </main>
 
-  <!-- ✅ APP SCREEN -->
+  <!-- MAIN APP (hidden until device selected) -->
   <main id="app" class="card hidden">
     <div class="row space-between">
       <h2 id="deviceHeader" style="margin:0;">Device</h2>
-      <button id="backBtn" class="small">← Change device</button>
+      <button id="backBtn" class="small" type="button">← Change device</button>
     </div>
 
     <h2>1) Flash firmware</h2>
     <p class="hint">Use Chrome/Edge. Close Arduino Serial Monitor first.</p>
     <div class="row">
-      <!-- We set manifest dynamically in JS -->
+      <!-- Manifest is set dynamically in app.js -->
       <esp-web-install-button id="installBtn"></esp-web-install-button>
     </div>
 
@@ -49,14 +80,14 @@
 
     <h2>2) Connect</h2>
     <div class="row">
-      <button id="connectBtn">Connect</button>
+      <button id="connectBtn" type="button">Connect</button>
       <span id="status">Not connected</span>
     </div>
 
     <div class="row">
       <input id="fileInput" type="file" accept=".gif,image/gif"/>
-      <button id="uploadBtn" disabled>Upload to /gifs</button>
-      <button id="refreshBtn" disabled>Refresh</button>
+      <button id="uploadBtn" disabled type="button">Upload to /gifs</button>
+      <button id="refreshBtn" disabled type="button">Refresh</button>
     </div>
 
     <div id="uploadStatus" class="hint">Uploads go to /gifs</div>
