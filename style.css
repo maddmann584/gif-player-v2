@@ -1,24 +1,20 @@
-/* ============================= */
-/* GLOBAL RESET */
-/* ============================= */
-
+/* RESET */
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  margin: 0;
   font-family: Arial, Helvetica, sans-serif;
-  background: #f4f5f8;
+  background: #f4f6fb;
   color: #111;
 }
 
-/* ============================= */
-/* HERO HEADER */
-/* ============================= */
+/* ================= HERO ================= */
 
 .hero {
-  padding: 40px 20px 120px;
+  padding: 50px 20px 130px;
   background: linear-gradient(
     90deg,
     #6fb46a 0%,
@@ -27,11 +23,6 @@ body {
   );
   text-align: center;
   color: white;
-}
-
-.hero-inner {
-  max-width: 1100px;
-  margin: auto;
 }
 
 .brand {
@@ -45,45 +36,39 @@ body {
   width: 60px;
   height: 60px;
   border-radius: 16px;
-  border: 2px solid rgba(255,255,255,.6);
+  border: 2px solid rgba(255,255,255,.7);
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255,255,255,.15);
+  background: rgba(255,255,255,.2);
 }
 
 .brand-title {
-  font-size: 52px;
+  font-size: 48px;
   font-weight: 800;
-  line-height: 1;
 }
 
 .brand-sub {
   margin-top: 6px;
-  letter-spacing: 8px;
-  font-size: 16px;
-  opacity: 0.9;
+  letter-spacing: 6px;
+  font-size: 14px;
 }
 
-/* ============================= */
-/* MAIN WHITE PANEL */
-/* ============================= */
+/* ================= MAIN PANEL ================= */
 
 .panel {
   width: min(1000px, calc(100% - 40px));
   margin: -90px auto 40px;
   background: white;
-  border-radius: 16px;
+  border-radius: 18px;
   box-shadow: 0 30px 70px rgba(0,0,0,.15);
-  padding: 28px;
+  padding: 30px;
 }
 
-/* ============================= */
-/* HEADERS */
-/* ============================= */
+/* ================= HEADINGS ================= */
 
 .panel-title {
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 800;
   text-align: center;
 }
@@ -91,48 +76,38 @@ body {
 .panel-sub {
   text-align: center;
   color: #666;
-  font-size: 14px;
   margin-top: 6px;
-}
-
-.panel-foot {
-  text-align: center;
-  margin-top: 20px;
-  font-size: 13px;
-  color: #666;
 }
 
 .h2-dark {
   font-size: 20px;
-  margin-top: 18px;
+  margin: 20px 0 10px;
 }
 
-/* ============================= */
-/* DEVICE CARDS */
-/* ============================= */
+/* ================= DEVICE CARDS ================= */
 
 .choice-grid {
-  margin-top: 20px;
+  margin-top: 24px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 20px;
 }
 
 .choice-card {
-  background: #f8f9fb;
-  border: 1px solid #e6e7ef;
-  border-radius: 14px;
-  padding: 20px;
+  background: #f8f9fc;
+  border: 1px solid #e3e6f1;
+  border-radius: 16px;
+  padding: 22px;
   display: flex;
-  align-items: center;
   gap: 16px;
+  align-items: center;
   cursor: pointer;
-  transition: all .15s ease;
+  transition: all .2s ease;
 }
 
 .choice-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 14px 28px rgba(0,0,0,.08);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 35px rgba(0,0,0,.08);
 }
 
 .choice-icon {
@@ -140,11 +115,11 @@ body {
   height: 70px;
   border-radius: 14px;
   background: white;
-  border: 1px solid #e6e7ef;
+  border: 1px solid #e3e6f1;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 32px;
+  font-size: 30px;
 }
 
 .choice-title {
@@ -158,9 +133,7 @@ body {
   margin-top: 6px;
 }
 
-/* ============================= */
-/* BUTTONS */
-/* ============================= */
+/* ================= BUTTONS ================= */
 
 button {
   padding: 10px 16px;
@@ -168,7 +141,7 @@ button {
   border: none;
   font-weight: 600;
   cursor: pointer;
-  transition: .15s ease;
+  transition: .2s ease;
 }
 
 button:disabled {
@@ -186,39 +159,15 @@ button:disabled {
 }
 
 .btn-light {
-  background: #f3f4f8;
-  border: 1px solid #e6e7ef;
-  color: #111;
+  background: #eef0f6;
+  border: 1px solid #e3e6f1;
 }
 
 .btn-light:hover {
-  background: #e9eaf2;
+  background: #e2e5f3;
 }
 
-/* ============================= */
-/* TOP BAR */
-/* ============================= */
-
-.topbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.topbar-title {
-  font-size: 22px;
-  font-weight: 800;
-}
-
-.topbar-sub {
-  font-size: 13px;
-  color: #666;
-  margin-top: 4px;
-}
-
-/* ============================= */
-/* LAYOUT ROWS */
-/* ============================= */
+/* ================= LAYOUT ================= */
 
 .row {
   display: flex;
@@ -230,50 +179,41 @@ button:disabled {
 
 .sep-light {
   height: 1px;
-  background: #e6e7ef;
+  background: #e3e6f1;
   border: none;
   margin: 20px 0;
 }
 
-/* ============================= */
-/* STATUS */
-/* ============================= */
+/* ================= STATUS ================= */
 
 .status-pill {
-  background: #f3f4f8;
-  border: 1px solid #e6e7ef;
   padding: 6px 12px;
   border-radius: 999px;
+  background: #eef0f6;
+  border: 1px solid #e3e6f1;
   font-size: 13px;
   color: #555;
 }
 
-/* ============================= */
-/* GIF LIST */
-/* ============================= */
+/* ================= GIF LIST ================= */
 
 .list {
-  margin-top: 14px;
+  margin-top: 16px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 14px;
+  gap: 16px;
 }
 
 .gif-card {
-  background: #f8f9fb;
-  border: 1px solid #e6e7ef;
-  border-radius: 12px;
-  padding: 12px;
-  display: flex;
-  flex-direction: column;
+  background: #f8f9fc;
+  border: 1px solid #e3e6f1;
+  border-radius: 14px;
+  padding: 14px;
 }
 
 .gif-name {
   font-family: monospace;
   font-size: 14px;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
 }
 
 .gif-meta {
@@ -298,14 +238,12 @@ button:disabled {
   color: white;
 }
 
-/* ============================= */
-/* DEBUG BOX */
-/* ============================= */
+/* ================= DEBUG ================= */
 
 .debug {
-  margin-top: 16px;
-  background: #f8f9fb;
-  border: 1px solid #e6e7ef;
+  margin-top: 18px;
+  background: #f8f9fc;
+  border: 1px solid #e3e6f1;
   border-radius: 12px;
   padding: 12px;
   max-height: 240px;
@@ -314,18 +252,7 @@ button:disabled {
   white-space: pre-wrap;
 }
 
-/* ============================= */
-/* HELPERS */
-/* ============================= */
-
-.hint-dark {
-  font-size: 13px;
-  color: #666;
-}
-
-.mono {
-  font-family: monospace;
-}
+/* ================= HELPERS ================= */
 
 .hidden {
   display: none;
