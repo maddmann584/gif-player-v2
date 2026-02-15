@@ -1,62 +1,332 @@
-/* --- White UI helpers for the APP screen --- */
-.topbar{
-  display:flex;
-  align-items:flex-start;
-  justify-content:space-between;
-  gap:12px;
-}
-.topbar-title{
-  font-size:22px;
-  font-weight:800;
-  color:#111;
-}
-.topbar-sub{
-  margin-top:4px;
-  font-size:12px;
-  color:#666;
-}
-.btn-light{
-  padding:10px 12px;
-  border-radius:10px;
-  border:1px solid #e6e6ee;
-  background:#f6f6f7;
-  color:#111;
-  cursor:pointer;
-}
-.btn-light:hover{ background:#f8f8fb; }
+/* ============================= */
+/* GLOBAL RESET */
+/* ============================= */
 
-.btn-dark{
-  padding:10px 14px;
-  border-radius:10px;
-  border:0;
-  background:#2b2b33;
-  color:#eaeaea;
-  cursor:pointer;
-}
-.btn-dark:disabled{ opacity:.5; cursor:not-allowed; }
-
-.h2-dark{ color:#111; margin: 8px 0; }
-.hint-dark{ color:#666; font-size:12px; margin: 6px 0 10px; }
-
-.status-pill{
-  padding:6px 10px;
-  border-radius:999px;
-  background:#f2f2f6;
-  border:1px solid #e6e6ee;
-  color:#555;
+* {
+  box-sizing: border-box;
 }
 
-.sep-light{ border:0; height:1px; background:#e9e9f2; margin:14px 0; }
-
-/* Make list + debug look good on white */
-.light-list .gif-card{
-  background:#f6f6f7;
-  border:1px solid #e6e6ee;
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f4f5f8;
+  color: #111;
 }
-.light-list .gif-meta{ color:#666; }
 
-.light-debug{
-  background:#f6f6f7;
-  border:1px solid #e6e6ee;
-  color:#111;
+/* ============================= */
+/* HERO HEADER */
+/* ============================= */
+
+.hero {
+  padding: 40px 20px 120px;
+  background: linear-gradient(
+    90deg,
+    #6fb46a 0%,
+    #4e9ca6 45%,
+    #3b6dd7 100%
+  );
+  text-align: center;
+  color: white;
+}
+
+.hero-inner {
+  max-width: 1100px;
+  margin: auto;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.logo {
+  width: 60px;
+  height: 60px;
+  border-radius: 16px;
+  border: 2px solid rgba(255,255,255,.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,.15);
+}
+
+.brand-title {
+  font-size: 52px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.brand-sub {
+  margin-top: 6px;
+  letter-spacing: 8px;
+  font-size: 16px;
+  opacity: 0.9;
+}
+
+/* ============================= */
+/* MAIN WHITE PANEL */
+/* ============================= */
+
+.panel {
+  width: min(1000px, calc(100% - 40px));
+  margin: -90px auto 40px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 30px 70px rgba(0,0,0,.15);
+  padding: 28px;
+}
+
+/* ============================= */
+/* HEADERS */
+/* ============================= */
+
+.panel-title {
+  font-size: 24px;
+  font-weight: 800;
+  text-align: center;
+}
+
+.panel-sub {
+  text-align: center;
+  color: #666;
+  font-size: 14px;
+  margin-top: 6px;
+}
+
+.panel-foot {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 13px;
+  color: #666;
+}
+
+.h2-dark {
+  font-size: 20px;
+  margin-top: 18px;
+}
+
+/* ============================= */
+/* DEVICE CARDS */
+/* ============================= */
+
+.choice-grid {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+.choice-card {
+  background: #f8f9fb;
+  border: 1px solid #e6e7ef;
+  border-radius: 14px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  cursor: pointer;
+  transition: all .15s ease;
+}
+
+.choice-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 28px rgba(0,0,0,.08);
+}
+
+.choice-icon {
+  width: 70px;
+  height: 70px;
+  border-radius: 14px;
+  background: white;
+  border: 1px solid #e6e7ef;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+}
+
+.choice-title {
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.choice-desc {
+  font-size: 13px;
+  color: #555;
+  margin-top: 6px;
+}
+
+/* ============================= */
+/* BUTTONS */
+/* ============================= */
+
+button {
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: .15s ease;
+}
+
+button:disabled {
+  opacity: .5;
+  cursor: not-allowed;
+}
+
+.btn-dark {
+  background: #2b2b33;
+  color: white;
+}
+
+.btn-dark:hover {
+  background: #1e1e24;
+}
+
+.btn-light {
+  background: #f3f4f8;
+  border: 1px solid #e6e7ef;
+  color: #111;
+}
+
+.btn-light:hover {
+  background: #e9eaf2;
+}
+
+/* ============================= */
+/* TOP BAR */
+/* ============================= */
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.topbar-title {
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.topbar-sub {
+  font-size: 13px;
+  color: #666;
+  margin-top: 4px;
+}
+
+/* ============================= */
+/* LAYOUT ROWS */
+/* ============================= */
+
+.row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 12px 0;
+}
+
+.sep-light {
+  height: 1px;
+  background: #e6e7ef;
+  border: none;
+  margin: 20px 0;
+}
+
+/* ============================= */
+/* STATUS */
+/* ============================= */
+
+.status-pill {
+  background: #f3f4f8;
+  border: 1px solid #e6e7ef;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+  color: #555;
+}
+
+/* ============================= */
+/* GIF LIST */
+/* ============================= */
+
+.list {
+  margin-top: 14px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+}
+
+.gif-card {
+  background: #f8f9fb;
+  border: 1px solid #e6e7ef;
+  border-radius: 12px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+}
+
+.gif-name {
+  font-family: monospace;
+  font-size: 14px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.gif-meta {
+  font-size: 12px;
+  color: #666;
+  margin-top: 4px;
+}
+
+.gif-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.play {
+  background: #1e6f44;
+  color: white;
+}
+
+.del {
+  background: #b23a3a;
+  color: white;
+}
+
+/* ============================= */
+/* DEBUG BOX */
+/* ============================= */
+
+.debug {
+  margin-top: 16px;
+  background: #f8f9fb;
+  border: 1px solid #e6e7ef;
+  border-radius: 12px;
+  padding: 12px;
+  max-height: 240px;
+  overflow: auto;
+  font-size: 12px;
+  white-space: pre-wrap;
+}
+
+/* ============================= */
+/* HELPERS */
+/* ============================= */
+
+.hint-dark {
+  font-size: 13px;
+  color: #666;
+}
+
+.mono {
+  font-family: monospace;
+}
+
+.hidden {
+  display: none;
 }
